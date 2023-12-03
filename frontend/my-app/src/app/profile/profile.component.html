@@ -1,0 +1,27 @@
+<div *ngIf="user">
+    <h2>Welcome, {{ user.username }}</h2>
+    <!-- Display other user information here -->
+  </div>
+
+  <div
+      class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 cursor-pointer py-16">
+      <div *ngFor="let item of itemList"
+          class="max-w-xs rounded overflow-hidden shadow-lg">
+          <img class="w-full h-48 object-cover" src=""
+              alt="{{ item.title }}">
+          <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">{{ item.title }}</div>
+              <p class="text-gray-700 text-base">{{ item.description }}</p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+              <span
+                  class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                  {{ item.price }} $
+              </span>
+              <span
+                  class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                  In stock : {{ item.quantity }}
+              </span>
+          </div>
+      </div>
+    </div>
