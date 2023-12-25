@@ -19,11 +19,14 @@ const productSchema = mongoose.Schema({
     },
     imageUrl: {
         type: String,
-        // required: true,
+        required: true,
     },
     comments:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comment',
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Comment',.
+        type: [Object],
+        userName: String,
+        comment: String,
     },
     review:{
         type: Number,

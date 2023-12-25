@@ -1,0 +1,12 @@
+<div>
+    <h2>Chat</h2>
+    <div id="chat-window">
+        <div id="output" *ngFor="let data of output">
+            <p>{{data.handle}} : {{data.message}}</p>
+        </div>
+        <div id="feedback"><p>{{feedback}}</p></div>
+    </div>
+    <input id="handle" type="text" placeholder="Handle" [(ngModel)]="username" />
+    <input id="message" type="text" placeholder="Message" [(ngModel)]="message" />
+    <button id="send" (click)="sendMessage()">Send</button>
+</div>

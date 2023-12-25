@@ -1,0 +1,44 @@
+
+<form #form="ngForm" (ngSubmit)="onSubmit(title, description, price, quantity, imageUrl)">
+    <!-- <mat-dialog-content> -->
+        <header>
+            <h1>Create Product</h1>
+        </header>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Title" [(ngModel)]="title" name="title" class="w-[80%] h-10 border border-gray-300 rounded-lg pl-4 ml-4"/>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Description" [(ngModel)]="description" name="description" class="w-[80%] h-10 border border-gray-300 rounded-lg pl-4 ml-4"/>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Price" [(ngModel)]="price" name="price" class="w-[80%] h-10 border border-gray-300 rounded-lg pl-4 ml-4" [defaultValue]=""/>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Quantity" [(ngModel)]="quantity" name="quantity" class="w-[80%] h-10 border border-gray-300 rounded-lg pl-4 ml-4" [defaultValue]=""/>
+            </mat-form-field>
+        </p>
+
+        <div>
+            <lr-config ctx-name="my-uploader" pubkey="aa6062d37d5789ca0175"
+                sourceList="local, url, camera, dropbox, grd" />
+            <lr-file-uploader-regular ctx-name="my-uploader"
+                css-src="https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.0/web/lr-file-uploader-regular.min.css" />
+            <lr-upload-ctx-provider ctx-name="my-uploader" #ctxProvider />
+
+            <input id="imageUrl" type="text" name="imageUrl" placeholder="upload" [(ngModel)]="imageUrl" class="w-[80%] h-10 border border-gray-300 rounded-lg pl-4 ml-4" hidden/>
+        </div>
+    <!-- </mat-dialog-content> -->
+    <mat-dialog-actions align="end">
+        <button mat-raised-button color="primary" type="submit" matDialogClose class="w-20 h-10 border border-gray-400 rounded-lg hover:text-white hover:bg-purple-800 m-2">
+            Post
+        </button>
+        <button mat-raised-button color="warn" matDialogClose class="w-20 h-10 border border-gray-400 rounded-lg hover:text-white hover:bg-rose-500 m-2">Cancel</button>
+    </mat-dialog-actions>
+</form>

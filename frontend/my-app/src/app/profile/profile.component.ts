@@ -1,12 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { DataService } from '../data.service';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule} from '@angular/material/icon';
+import { MatInputModule} from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+  imports: [MatButtonModule,MatButtonModule,MatFormFieldModule,MatIconModule,MatInputModule,MatDialogModule,BrowserModule],
+  standalone: true,
 })
+
 
 
 export class ProfileComponent implements OnInit {

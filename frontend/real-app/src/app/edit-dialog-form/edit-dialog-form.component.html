@@ -1,0 +1,41 @@
+
+<button mat-icon-button matDialogClose>
+    <mat-icon>close</mat-icon>
+</button>
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+        <header>
+            <h1>Edit Product</h1>
+        </header>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Title" [(ngModel)]="title" name="title">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Description" [(ngModel)]="description" name="description">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Price" [(ngModel)]="price" name="price">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Quantity" [(ngModel)]="quantity" name="quantity">
+            </mat-form-field>
+        </p>
+
+        <div>
+            <!-- <input type="file" name="imageUrl" placeholder="upload" (change)="selectImage($event)" /> -->
+            <input id="imageUrl" type="file" name="imageUrl" placeholder="upload" (change)="selectImage($event)" [(ngModel)]="imageUrl"/>
+        </div>
+        
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button color="primary"  type="submit" (click)="onSubmit()" matDialogClose>Save</button>
+        <button mat-raised-button color="warn" matDialogClose>Cancel</button>
+    </mat-dialog-actions>
+</form>

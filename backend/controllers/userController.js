@@ -107,4 +107,15 @@ const generateToken = (id) => {
     })
 }
 
-module.exports = { registerUser, loginUser, me }
+// @desc   Me
+// @route   Get /api/users/allusers
+// @access  Private
+const allUsers = asyncHandler(async (req, res) => {
+    
+        // You can access the authenticated user's data from req.user (assuming your authentication middleware sets it)
+        const users = await User.find({});
+    
+        res.json(users);
+})
+
+module.exports = { registerUser, loginUser, me, allUsers }

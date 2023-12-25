@@ -3,8 +3,20 @@
     <!-- Display other user information here -->
   </div>
 
+  <div class="">
+    <h1> Your item </h1>
+    <button class="bg-zinc-500">
+        Add item
+    </button>
+    <!-- <mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="true">Yes</button>
+        <button mat-button [mat-dialog-close]="false">No</button>
+    </mat-dialog-actions> -->
+  </div>
+
   <div
       class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 cursor-pointer py-16">
+      
       <div *ngFor="let item of itemList"
           class="max-w-xs rounded overflow-hidden shadow-lg">
           <img class="w-full h-48 object-cover" src=""
